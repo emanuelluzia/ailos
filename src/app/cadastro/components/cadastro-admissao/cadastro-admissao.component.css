@@ -1,0 +1,43 @@
+.text-error{
+  color: #C13018;
+}
+
+.input-error{
+  border-color: #C13018 !important;
+}
+
+.button{
+  background-color: var(--primary);
+  border: none;
+  border-radius: 2px;
+  height: 48px;
+  padding: 0 24px 0 24px;
+  color: white;
+}
+
+.input-cpf{
+  border-radius: 2px;
+  height: 48px;
+  border: 1px solid black;
+  width: 286px;
+}
+
+.background-body{
+  background-color: var(--main-background);
+  margin-left: 30px;
+}
+
+.icon{
+  color:rgb(122, 122, 122);
+  height: 200px !important;
+  display:inline-block;
+}
+
+.cpf-space{
+  gap: 25px;
+}
+
+.cardGroup{
+  display: flex;
+  gap: 25px;
+}

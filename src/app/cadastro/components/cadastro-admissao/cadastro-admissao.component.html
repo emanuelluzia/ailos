@@ -1,0 +1,34 @@
+<div class="background-body">
+  <form (ngSubmit)="submit()" [formGroup]="admissaoForm" #formDir="ngForm" >
+    <div>
+      <app-step-progress-bar></app-step-progress-bar>
+    </div>
+    <div>
+      <h1>Informe o CPF do futuro cooperado (a)</h1>
+      <p>Se necessário, vocÊ poderá duplicar uma conta existente ou pausar e retornar este cadastro futuramente <br>
+        Digite apenas os números (sem pontos ou traços).
+      </p>
+    </div>
+    <div>
+        <label>CPF</label>
+    </div>
+    <div class="form-group mb-2 form-inline cpf-space">
+        <input type="text" id="CPF" placeholder="000.000.000-00" formControlName="cpf" class="input-cpf" [imask]="{mask: '000.000.000-00'}"  [ngClass]="{'input-error':validaCampo()}" >
+        <app-custom-button [disable]="cpfValido" [name]="'Consulta por CPF'"></app-custom-button>
+    </div>
+    <div>
+      <div *ngIf="validaCampo()">
+        <small id="cpfHelp" class="form-text text-error">Informe um CPF Válido</small>
+      </div>
+    </div>
+  </form>
+
+  <div *ngIf="cpfValido==true" class="cardGroup">
+    <app-card [isCpf]="true"  [title]="'Situação Cadastral do CPF'"  [subtitle]="'Consulta na Receita Federal'"  [label1]="'Nome'"  [label2]="'Mariane de Souza Oliveira'"  [label3]="'Situação do CPF'"  [label4]="'Regular'"></app-card>
+    <app-card [isCpf]="false" [title]="'Conta Aplicação'"  [subtitle]="'Cooperativa Viacredi'"  [label1]="'Número Da conta'"  [label2]="'557932-4'"></app-card>
+    <app-card [isCpf]="false" [title]="'Conta Corrente'"  [subtitle]="'Cooperativa Viacredi'"  [label1]="'Número Da conta'"  [label2]="'778461-8'"></app-card>
+  </div>
+
+</div>
+
+
