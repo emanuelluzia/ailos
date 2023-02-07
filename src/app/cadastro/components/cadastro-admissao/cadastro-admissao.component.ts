@@ -24,7 +24,6 @@ export class CadastroAdmissaoComponent implements OnInit{
   }
 
   get cpf() {
-    console.log(this.admissaoForm.get('cpf'));
     return this.admissaoForm.get('cpf')!;
   }
 
